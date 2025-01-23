@@ -1,26 +1,33 @@
 package com.mindera.mindswap.education_manager.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+/**
+ * Data Transfer Object (DTO) for representing course information.
+ * 
+ * This class is used to transfer course data between the service layer
+ * and the client, excluding sensitive or unnecessary information from
+ * the entity class.
+ * 
+ * Properties:
+ * - id: Unique identifier of the course
+ * - name: Name of the course
+ * - description: Detailed description of the course
+ */
 @Data
 public class CourseDTO {
-
-    public CourseDTO() {
-    }
-
-    public CourseDTO(Long id) {
-        this.id = id;
-    }
-
+    /**
+     * Unique identifier of the course.
+     */
     private Long id;
 
-    @NotBlank(message = "Name is required")
-    @Size(min = 1, max = 50, message = "Name must be between 1 and 50 characters")
+    /**
+     * Name of the course.
+     */
     private String name;
 
-    @NotBlank(message = "Description is required")
-    @Size(min = 1, max = 1000, message = "Description must be between 1 and 1000 characters")
+    /**
+     * Detailed description of the course.
+     */
     private String description;
 }

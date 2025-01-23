@@ -6,17 +6,34 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration class for OpenAPI documentation.
+ * This class sets up the Swagger/OpenAPI documentation for the Education Manager API.
+ * 
+ * The configuration includes:
+ * - API title and description
+ * - Version information
+ * - Base components setup
+ * 
+ * Access the Swagger UI at: /swagger-ui.html
+ * Access the OpenAPI specification at: /v3/api-docs
+ */
 @Configuration
-class OpenApiConfig {
+public class OpenApiConfig {
 
+    /**
+     * Creates and configures the OpenAPI documentation bean.
+     * 
+     * @return Configured OpenAPI instance with application information
+     */
     @Bean
-    OpenAPI openAPI(){
+    public OpenAPI openAPI() {
         return new OpenAPI()
                 .components(new Components())
                 .info(new Info()
                         .title("Education Management API")
-                        .description("App that manage students and courses.")
-                        .version("0.0.1")
+                        .description("Application for managing students and courses")
+                        .version("1.0.0")
                 );
     }
 }
