@@ -32,7 +32,7 @@ git clone https://github.com/nuntera/education-manager.git
 2. Navigate to the project directory:  
 cd education-manager  
 
-3. Build the project:
+3. Build the project:  
 mvn clean install
 
 4. Run the application:  
